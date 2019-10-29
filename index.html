@@ -1,0 +1,41 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="js.js"></script>
+	
+<table id="OutputResults" border="1">
+		<tr>
+			<th scope="col">Reopens</th>
+			<th scope="col">Cases</th>
+			<th scope="col">CID</th>
+			<th scope="col">Escalate</th>
+			<th scope="col">Counter</th>
+		</tr>
+		<tr>
+			<td>
+				<button onclick="AddManualTally('Pages')">Add</button>
+				<button onclick="RemoveManualTally('Pages')">Remove</button>
+			</td>
+			<td>
+				<button onclick="AddManualTally('News')">Add</button>
+				<button onclick="RemoveManualTally('News')">Remove</button>
+			</td>
+			<td>
+				<button onclick="AddManualTally('Events')">Add</button>
+				<button onclick="RemoveManualTally('Events')">Remove</button>
+			</td>
+			<td>
+				<button onclick="AddManualTally('Publications')">Add</button>
+				<button onclick="RemoveManualTally('Publications')">Remove</button>
+			</td>
+			<td>
+				<button onclick="AddManualTally('huhu')">Add</button>
+				<button onclick="RemoveManualTally('huhu')">Remove</button>
+			</td>
+		</tr>
+		<tr>
+			<td id="txtPages" data-tallykey="Pages">0</td>
+			<td id="txtNews" data-tallykey="News">0</td>
+			<td id="txtEvents" data-tallykey="Events">0</td>
+			<td id="txtPublications" data-tallykey="Publications">0</td>
+			<td id="txthuhu" data-tallykey="huhu">0</td>
+		</tr>
+	</table>
