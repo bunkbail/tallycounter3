@@ -1,7 +1,7 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="js.js"></script>
 	
-<table id="OutputResults" border="1">
+<table id="outputResults" border="1">
 		<tr>
 			<th scope="col">Reopens</th>
 			<th scope="col">Cases</th>
@@ -11,31 +11,31 @@
 		</tr>
 		<tr>
 			<td>
-				<button onclick="AddManualTally('Pages')">+</button>
-				<button onclick="RemoveManualTally('Pages')">-</button>
+				<button onclick="AddManualTally('dtk1')">+</button>
+				<button onclick="RemoveManualTally('dtk1')">-</button>
 			</td>
 			<td>
-				<button onclick="AddManualTally('News')">+</button>
-				<button onclick="RemoveManualTally('News')">-</button>
+				<button onclick="AddManualTally('dtk2')">+</button>
+				<button onclick="RemoveManualTally('dtk2')">-</button>
 			</td>
 			<td>
-				<button onclick="AddManualTally('Events')">+</button>
-				<button onclick="RemoveManualTally('Events')">-</button>
+				<button onclick="AddManualTally('dtk3')">+</button>
+				<button onclick="RemoveManualTally('dtk3')">-</button>
 			</td>
 			<td>
-				<button onclick="AddManualTally('Publications')">+</button>
-				<button onclick="RemoveManualTally('Publications')">-</button>
+				<button onclick="AddManualTally('dtk4')">+</button>
+				<button onclick="RemoveManualTally('dtk4')">-</button>
 			</td>
 			<td>
-				<button onclick="AddManualTally('huhu')">+</button>
-				<button onclick="RemoveManualTally('huhu')">-</button>
+				<button onclick="AddManualTally('dtk5')">+</button>
+				<button onclick="RemoveManualTally('dtk5')">-</button>
 			</td>
 		</tr>
-		<tr>
-			<td id="txtPages" data-tallykey="Pages">0</td>
-			<td id="txtNews" data-tallykey="News">0</td>
-			<td id="txtEvents" data-tallykey="Events">0</td>
-			<td id="txtPublications" data-tallykey="Publications">0</td>
-			<td id="txthuhu" data-tallykey="huhu">0</td>
+		<tr id="tallyCount" onmouseover="total()" onmouseout="indv()">
+			<td id="data1" data-tallykey="dtk1">0</td>
+			<td id="data2" data-tallykey="dtk2">0</td>
+			<td id="data3" data-tallykey="dtk3">0</td>
+			<td id="data4" data-tallykey="dtk4">0</td>
+			<td id="data5" data-tallykey="dtk5">0</td>
 		</tr>
 	</table>
