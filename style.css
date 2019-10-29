@@ -2,16 +2,12 @@ body {
     font-family: 'segoe ui', sans-serif;
 }
 table {
-    background: grey;
     border: 1px solid black;
     border-spacing: 0;
     border-collapse: collapse;
 }
 td,th {
-    border: 3px solid white;
+    border: 1px solid black;
     text-align: center;
-    padding: .5em .2em;
-}
-button {
-    padding: .3em .4em;
+    padding: .1em .1em;
 }
