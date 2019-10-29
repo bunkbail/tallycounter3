@@ -1,41 +1,44 @@
-<link rel="stylesheet" type="text/css" href="style.css">
-<script src="js.js"></script>
+var ManualTallyMetrics = new Array();
 	
-<table id="outputResults" border="1">
-		<tr>
-			<th scope="col">Reopens</th>
-			<th scope="col">Cases</th>
-			<th scope="col">CID</th>
-			<th scope="col">Escalate</th>
-			<th scope="col">Counter</th>
-		</tr>
-		<tr>
-			<td>
-				<button onclick="AddManualTally('dtk1')">+</button>
-				<button onclick="RemoveManualTally('dtk1')">-</button>
-			</td>
-			<td>
-				<button onclick="AddManualTally('dtk2')">+</button>
-				<button onclick="RemoveManualTally('dtk2')">-</button>
-			</td>
-			<td>
-				<button onclick="AddManualTally('dtk3')">+</button>
-				<button onclick="RemoveManualTally('dtk3')">-</button>
-			</td>
-			<td>
-				<button onclick="AddManualTally('dtk4')">+</button>
-				<button onclick="RemoveManualTally('dtk4')">-</button>
-			</td>
-			<td>
-				<button onclick="AddManualTally('dtk5')">+</button>
-				<button onclick="RemoveManualTally('dtk5')">-</button>
-			</td>
-		</tr>
-		<tr id="tallyCount" onmouseover="total()" onmouseout="indv()">
-			<td id="data1" data-tallykey="dtk1">0</td>
-			<td id="data2" data-tallykey="dtk2">0</td>
-			<td id="data3" data-tallykey="dtk3">0</td>
-			<td id="data4" data-tallykey="dtk4">0</td>
-			<td id="data5" data-tallykey="dtk5">0</td>
-		</tr>
-	</table>
+function AddManualTally(metric) {
+    if (isNaN(ManualTallyMetrics[metric]) === true) {
+        ManualTallyMetrics[metric] = 1;
+    } else {
+        ManualTallyMetrics[metric] += 1;
+    }
+    UpdateMetric(metric);
+}
+
+function RemoveManualTally(metric) {
+    if (isNaN(ManualTallyMetrics[metric]) === true) {
+        ManualTallyMetrics[metric] = 0;
+    } else {
+        ManualTallyMetrics[metric] -= 1;
+    }
+    UpdateMetric(metric);
+}
+
+function UpdateMetric(metric) {
+	var element = document.querySelectorAll('[data-tallykey^="' + metric + '"]');
+	element[0].innerText = ManualTallyMetrics[metric];
+}
+
+function total() {
+  document.getElementById("data1").colSpan = "5";
+  document.getElementById("data2").style.visibility = "hidden";
+  document.getElementById("data3").style.visibility = "hidden";
+  document.getElementById("data4").style.visibility = "hidden";
+  document.getElementById("data5").style.visibility = "hidden";
+  document.getElementById("data1").innerHTML = parseInt(document.getElementById("data1").innerHTML) + parseInt(document.getElementById("data2").innerHTML) + parseInt(document.getElementById("data3").innerHTML) + parseInt(document.getElementById("data4").innerHTML) + parseInt(document.getElementById("data5").innerHTML);
+}
+
+function indv() {
+  document.getElementById("data1").colSpan = "1";
+  
+ document.getElementById("data2").style.visibility = "visible";
+document.getElementById("data3").style.visibility = "visible";
+document.getElementById("data4").style.visibility = "visible";
+document.getElementById("data5").style.visibility = "visible";
+  
+  document.getElementById("data1").innerHTML = parseInt(document.getElementById("data1").innerHTML) - parseInt(document.getElementById("data2").innerHTML) - parseInt(document.getElementById("data3").innerHTML) - parseInt(document.getElementById("data4").innerHTML) - parseInt(document.getElementById("data5").innerHTML);
+}
